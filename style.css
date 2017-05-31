@@ -46,8 +46,17 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
-html {
-	font-family: sans-serif;
+html {  
+  font-family: -apple-system, 
+               BlinkMacSystemFont, 
+               "Segoe UI", 
+               Roboto, 
+               Oxygen,
+               Ubuntu,
+               Cantarell,
+               "Open Sans",
+               "Helvetica Neue", 
+               sans-serif;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust:     100%;
 }
@@ -109,11 +118,6 @@ strong {
 
 dfn {
 	font-style: italic;
-}
-
-h1 {
-	font-size: 2em;
-	margin: 0.67em 0;
 }
 
 mark {
@@ -265,24 +269,13 @@ button,
 input,
 select,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
-	font-size: 1rem;
+	color: #404040;  
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", 							"Helvetica Neue", sans-serif;
 	line-height: 1.5;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
-}
-
 p {
-	margin-bottom: 1.5em;
+	font-family: Georgia,Cambria,"Times New Roman",Times,serif;
 }
 
 dfn,
@@ -337,6 +330,49 @@ big {
 	font-size: 125%;
 }
 
+html {font-size: 1.125em;}
+
+p {margin-bottom: 1.3em;}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2em;
+	font-weight: bold;
+}
+
+h2 {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+h3 {
+	font-size: 1.25em;
+	font-weight: bold;
+	}
+
+h4 {font-size: 1.12em;}
+
+small, .font_small {font-size: 0.8em;}
+
+@media screen and (min-width: 960px) {
+
+	h1 {
+		font-size: 2.441em;
+	}
+
+	h2 {
+		font-size: 1.953em;
+	}
+
+	h3 {font-size: 1.4em;}
+}
+
 /*--------------------------------------------------------------
 # Elements
 --------------------------------------------------------------*/
@@ -375,7 +411,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0;
 }
 
 ul {
@@ -531,6 +567,14 @@ a:active {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+.site-header {
+    background: #eee;
+    padding: 1% 0;
+}
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
 .main-navigation {
 	clear: both;
 	display: block;
@@ -746,6 +790,45 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.site-content {
+	max-width: 1100px;
+	margin: 0 auto;
+}
+.content-area {
+	padding: 2%;
+}
+.site-main {
+	
+}
+.site-content .widget-area {
+	display: none;
+	visibility: hidden;
+}
+.site-footer {
+	clear: both;
+	width: 100%;
+}
+
+
+@media screen and (min-width: 960px) {
+.content-area {
+	float: left;
+	margin: 0 -30% 0 0;
+	width: 100%;
+}
+.site-main {
+	margin: 0 30% 0 0;
+	padding-right: 5%;
+}
+.site-content .widget-area {
+	float: right;
+	overflow: hidden;
+	width: 30%;
+	display: block;
+	visibility: visible;
+}
+}
+
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
