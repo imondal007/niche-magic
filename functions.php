@@ -141,3 +141,19 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Logo Uploader
+ */
+
+add_theme_support( 'custom-logo' );
+
+function nichemagic_custom_logo_setup() {
+    $defaults = array(
+        'height'      => 42,
+        'width'       => 160,
+        'header-text' => array( 'site-title', 'site-description' ),
+    );
+    add_theme_support( 'custom-logo', $defaults );
+}
+add_action( 'after_setup_theme', 'nichemagic_custom_logo_setup' );

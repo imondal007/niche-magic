@@ -25,20 +25,12 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-container">
-			<div class="site-branding">
-				<?php
-				if ( is_front_page() && is_home() ) : ?>
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-				endif;
-
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-				<?php
-				endif; ?>
+			<div class="site-branding"> 
+				<?php 
+					if ( function_exists( 'the_custom_logo' ) ) {
+    				the_custom_logo();
+					} 
+				?>
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
@@ -47,5 +39,12 @@
 			</nav><!-- #site-navigation -->
 		</div>
 	</header><!-- #masthead -->
+	
+	<?php
+ if ( is_single() && has_post_thumbnail()) {
+   $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
+   echo '<div class="entry-hero" style="background-image: url(', "'" . $large_image_url[0] .  "'", ')"></div>';
+ }
+ ?>
 
 	<div id="content" class="site-content">
