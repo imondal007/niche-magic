@@ -34,17 +34,10 @@
 			</div><!-- .site-branding -->
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'niche-magic' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'niche-magic' ); ?></button>
 				<?php wp_nav_menu( array( 'theme_location' => 'menu-1', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 		</div>
 	</header><!-- #masthead -->
-	
-	<?php
- if ( is_single() && has_post_thumbnail()) {
-   $large_image_url = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large');
-   echo '<div class="entry-hero" style="background-image: url(', "'" . $large_image_url[0] .  "'", ')"></div>';
- }
- ?>
 
 	<div id="content" class="site-content">
