@@ -1,6 +1,6 @@
 /*
 Theme Name: Niche Magic
-Theme URI: http://underscores.me/
+Github Theme URI: https://github.com/imondal007/niche-magic
 Author: Imran Mondal
 Author URI: https://imranmondal.com/
 Description: SEO friendly WordPress theme for affiliate marketing niche site
@@ -8,7 +8,6 @@ Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: niche-magic
-Tags:
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -244,6 +243,7 @@ legend {
 
 textarea {
 	overflow: auto;
+  margin-bottom: 25px;
 }
 
 optgroup {
@@ -337,6 +337,7 @@ h1, h2, h3, h4 {
   margin: 1.414em 0 0;
   font-weight: inherit;
   line-height: 1.2;
+	font-weight: bold;
 }
 
 article h2, article h3, article h4 {
@@ -346,22 +347,18 @@ article h2, article h3, article h4 {
 h1 {
   margin-top: 0;
   font-size: 2em;
-	font-weight: bold;
 }
-
 h2 {
 	font-size: 1.5em;
-	font-weight: bold;
 }
 
 h3 {
 	font-size: 1.25em;
-	font-weight: bold;
 	}
 
 h4 {font-size: 1.12em;}
 
-small, .font_small {font-size: 0.8em;}
+small, .font_small {font-size: 0.8em; line-height: 1.2em;}
 
 @media screen and (min-width: 37.5em) {
 
@@ -409,7 +406,7 @@ q {
 }
 
 hr {
-	background-color: #f7f7f7;
+	background-color: #ecf0f1;
 	border: 0;
 	height: 1px;
 	margin-bottom: 1.5em;
@@ -418,6 +415,7 @@ hr {
 ul,
 ol {
 	margin: 0;
+	padding: 0;
 }
 
 ul {
@@ -455,7 +453,13 @@ table {
 	margin: 0 0 1.5em;
 	width: 100%;
 }
-
+@media screen and (min-width: 37.5em) {
+	/* List */
+	ul,
+	ol {
+		padding-left: 1.2em;
+	}
+}
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -467,7 +471,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {    
 	border: none;
-  border-color: #f7f7f7 #f7f7f7 #bbb;
+  border-color: #ecf0f1 #ecf0f1 #bbb;
   border-radius: 0;
   background: #ff5200;
   color: #fff;
@@ -481,7 +485,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: #f7f7f7 #bbb #aaa;
+	border-color: #ecf0f1 #bbb #aaa;
 }
 
 button:focus,
@@ -515,7 +519,7 @@ textarea {
 	border: none;
 	border-radius: 0;
 	padding: 3px 10px;
-  background: #f7f7f7;
+  background: #ecf0f1;
   max-width: 100%;
   width: 100%;
 }
@@ -540,7 +544,7 @@ textarea {
 }
 
 select {
-	border: 1px solid #f7f7f7;
+	border: 1px solid #ecf0f1;
 }
 
 input[type="text"]:focus,
@@ -597,14 +601,18 @@ a:active {
 	outline: 0;
 }
 
-.widget-area ul li a, .main-navigation a {
+.widget-area ul li a, .main-navigation a, .menu-footer-container a {
     color: #354147;
 		text-transform: capitalize;
     font-size: 14px;
     font-weight: bold;
 }
 
-.widget-area ul li a:hover, .main-navigation a:hover {
+.widget-area ul li a:hover, .main-navigation a:hover, .menu-footer-container a:hover {
+    color: #205D67;
+}
+
+.main-navigation a:hover {
     color: #205D67;
 }
 
@@ -612,14 +620,16 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .site-header {
-		border-bottom: 1px solid #f7f7f7;
-		padding: 0 20px;
+		border-bottom: 1px solid #ecf0f1;
+		padding: 0 20px;    z-index: 9;
+    position: relative;
+    background: #fff;
 }
 .custom-logo-link {
 	line-height: 0;
 	display: block;
 }
-.header-container {
+.header-container, .footer-container {
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -644,7 +654,6 @@ a:active {
 .main-navigation li {
 	float: left;
 	position: relative;
-	padding: 0 10px;
 }
 
 .main-navigation li:first-child {
@@ -658,7 +667,7 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
-	padding: 14px 0;
+	padding: 14px 10px 15px;
 	cursor: pointer;
 }
 
@@ -678,6 +687,7 @@ a:active {
 
 .main-navigation li:hover > a,
 .main-navigation li.focus > a {
+		background-color: #ecf0f1;
 }
 
 .main-navigation ul ul :hover > a,
@@ -686,6 +696,7 @@ a:active {
 
 .main-navigation ul ul a:hover,
 .main-navigation ul ul a.focus {
+	background-color: #f8f8f8;
 }
 
 .main-navigation ul li:hover > ul,
@@ -740,22 +751,25 @@ a:active {
     top: 54px;
     left: -999em;
     z-index: 99999;
-    background: #ffffff;
-    border-radius: 0px 0px 5px 5px;
-    border: 1px solid #eee;
-    border-top: none;
-    padding: 0 10px 10px;
+    background: #ecf0f1;
+    border-bottom: 3px solid #354147;
+    padding: 0px;
 }
 
 .main-navigation ul li:hover > ul,
 .main-navigation ul li.focus > ul {
 	position: absolute;
-	right: -60px;
+	right: 0px;
+}
+
+.main-navigation ul li:nth-child():hover > ul,
+.main-navigation ul li.focus > ul {
+	position: absolute;
+	left: 0px;
 }
 
 .main-navigation ul ul li {
 	width: 350px;
-	border-bottom: 1px dashed #f7f7f7;
 }
 
 .main-navigation ul ul li:last-child {
@@ -763,7 +777,10 @@ a:active {
 }
 
 }
-
+.post-navigation {
+    display: block;
+    width: 100%;
+}
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
@@ -890,8 +907,9 @@ a:active {
 }
 
 .widget-area ul li {
-    padding: 5px 0px;
-		border-bottom: 1px dashed #f7f7f7;
+    padding: 10px 0px;
+		border-bottom: 1px dashed #ecf0f1;
+		line-height: 1.3em;
 }
 
 
@@ -907,11 +925,15 @@ a:active {
 /*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
+.page-title {
+    margin-bottom: .6em;
+}
+
 .entry-hero {
     display: block;
     height: 100%;
     min-height: 30vh;
-    background: fixed center center;
+    background: #ecf0f1 scroll center center;
     background-size: cover;
 }
 
@@ -923,9 +945,8 @@ a:active {
 .content-area {
 	padding: 0 20px;
 }
-
-.site-main {
-	
+.no-sidebar {
+	margin-top: -5%;
 }
 .site-content .widget-area {
 	display: none;
@@ -934,21 +955,199 @@ a:active {
 .site-footer {
 	clear: both;
 	width: 100%;
+	background-color: #ecf0f1;
+	padding-top: 100px;
+	padding-bottom: 0px;
+	color: #666;
 }
 
+.site-footer .custom-logo-link {
+	margin: 10px auto 35px;
+	text-align: center;
+	display: table;
+}
+.menu-footer-container ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.menu-footer-container ul li {
+    margin: 0 10px;
+}
+.site-info {
+    border-top: 1px solid #DADFE1;
+		margin-top: 90px;
+}
+
+.site-footer .social-icon .icon-2x {
+    font-size: 14px !important;
+}
+
+.page .post, .blog .post, .category .post {
+  background: #ecf0f1;
+	padding-bottom: 26px;
+	position: relative;
+}
+
+.page .post .entry-title, .blog .post .entry-title, .category .post .entry-title {
+  padding-left: 14px;
+	padding-right: 14px;
+}
+
+.page .post .entry-meta, .blog .post .entry-meta, .category .post .entry-meta {
+  padding-left: 14px;
+	padding-right: 14px;
+}
+
+.page .post p, .blog .post p, .category .post p {
+  padding-left: 14px;
+	padding-right: 14px;
+}
+
+.page .post footer, .blog .post footer, .category .post footer {
+  padding-left: 14px;
+	padding-right: 14px;
+  position: absolute;
+  bottom: 7px;
+}
+.page .post .read-more, .blog .post .read-more, .category .post .read-more {
+  position: absolute;
+  bottom: 7px;
+	left: 14px; 
+}
+
+/* unordered list style */
+ul.pros, ul.cons  {
+		display: flex;
+  	flex-wrap: wrap;
+}
+
+ul.pros li, ul.cons li  {
+    line-height: 1.1;
+		list-style: none;
+		display: flex;
+		width: 100%;
+		margin-bottom: 10px;
+}
+ul.pros li:before, ul.cons  li:before {
+		content: "■";
+    vertical-align: text-top;
+    padding-right: 12px;
+    display: inline-block;
+    font-size: 10px;
+    padding-top: 5px;
+}
+
+/* Cons List */
+ul.cons li:before {
+    color: #ed3e0c !important;
+}
+
+/* ProsList */
+ul.pros li:before {
+    color: #a5da19 !important;
+}
+
+/* Price Link */
+.check-price {
+    margin: 0;
+    padding: 0;
+    border: none;
+	 	min-height: auto;
+		background: none;
+		display: flex;
+		flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+
+}
+.check-price img.alignleft {
+			margin: 0;
+			display: none;
+	}
+.check-price .btn {
+    padding: 10px 25px;
+    border-radius: 5px;
+    margin-bottom: 0px;
+    max-width: 310px;
+    width: 100%;
+		float: left;
+		text-align: center;
+}
+.check-price h4 {
+    margin-top: 12px;
+    display: block;
+}
+
+.btn.orange {
+    background-color: #ed3e0c;
+    background-image: none;
+    background-image: none;
+		color: #fff;
+}
+
+.btn.orange:hover {
+    background-color: #d44219;
+}
 
 @media screen and (min-width: 37.5em) {
+	/* Price Link */
+	.check-price {
+			margin: 40px 0 10%;
+			padding: 10px;
+			border: 2px solid #eee;
+			border-right: 0;
+			border-left: 0;
+			min-height: 175px;
+			background: #f8f8f8;
+			display: block;
+			text-align: left;
+
+	}
+	.check-price img.alignleft {
+			margin: 0px 30px 0px 0;
+			display: inline;
+	}
+	.check-price h4 {
+			margin-bottom: 20px;
+	}
+	.site-main {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	.no-supports .site-main {
+		display: block;
+	}
+
+ .page .post, .blog .post, .category .post {
+	 	width: 49%;
+		-moz-flex: 0 1 calc(50% - .5em);
+		-webkit-flex: 0 1 calc(50% - .5em);
+		flex: 0 1 calc(50% - .5em);
+	}
 	.entry-hero {
     min-height: 70vh;
 }
 .content-area {
 	float: left;
-	margin: 0 -30% 0 0;
+	margin-right: -30%;
 	width: 100%;
+}
+.no-sidebar {
+	float: none;
+	margin-right: 0;
 }
 .site-main {
 	margin: 0 30% 0 0;
 	padding-right: 5%;
+}
+.no-sidebar .site-main {
+	margin: 0;
+	padding: 0;
 }
 .site-content .widget-area {
 	float: right;
@@ -967,7 +1166,7 @@ a:active {
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin: 0 0 1em;
 }
 
 .byline,

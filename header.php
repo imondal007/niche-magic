@@ -40,4 +40,11 @@
 		</div>
 	</header><!-- #masthead -->
 
+	<?php 
+		if( is_single() && has_post_thumbnail() ) {
+			$bg_imag = get_the_post_thumbnail_url();
+			echo '<div class="entry-hero" style="background-image: url(' . $bg_imag . ');"></div>';
+		}
+	?>
+
 	<div id="content" class="site-content">

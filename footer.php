@@ -14,11 +14,17 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'niche-magic' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'niche-magic' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'niche-magic' ), 'niche-magic', '<a href="https://automattic.com/" rel="designer">Imran Mondal</a>' ); ?>
-		</div><!-- .site-info -->
+		<div class="footer-container">
+			<?php 
+				if ( function_exists( 'the_custom_logo' ) ) {
+    			the_custom_logo();
+				} 
+				wp_nav_menu( array( 'theme_location' => 'footer-menu' ) ); 
+			?>
+			<div class="site-info">
+				<p class="font_small">© 2017 by Fishing Picks | FishingPicks.com is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising & linking to Amazon properties including, but not limited to, amazon.com</p>
+			</div><!-- .site-info -->
+		</div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

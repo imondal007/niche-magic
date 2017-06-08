@@ -148,12 +148,41 @@ require get_template_directory() . '/inc/jetpack.php';
 
 add_theme_support( 'custom-logo' );
 
-function nichemagic_custom_logo_setup() {
+function niche_magic_custom_logo_setup() {
     $defaults = array(
         'height'      => 42,
         'width'       => 160,
+   			'flex-width' => true,
         'header-text' => array( 'site-title', 'site-description' ),
     );
     add_theme_support( 'custom-logo', $defaults );
 }
-add_action( 'after_setup_theme', 'nichemagic_custom_logo_setup' );
+add_action( 'after_setup_theme', 'niche_magic_custom_logo_setup' );
+
+/**
+ * Filter the except length to 20 words.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function niche_magic_excerpt_length( $length ) {
+    return 30;
+}
+add_filter( 'excerpt_length', 'niche_magic_excerpt_length', 999 );
+/**
+ * Filter the excerpt "read more" string.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function niche_magic_excerpt_more( $more ) {
+    return '';
+}
+add_filter( 'excerpt_more', 'niche_magic_excerpt_more' );
+/** 
+	* footer menu
+	*/
+function register_my_menu() {
+  register_nav_menu('footer-menu',__( 'Footer Menu' ));
+}
+add_action( 'init', 'register_my_menu' );
